@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+.page {
+  width: min(960px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.hero {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #52607a;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.subtitle {
+  color: #667085;
+  font-size: 1.05rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e4e7ec;
+  border-radius: 18px;
+  padding: 24px;
+  margin-top: 20px;
+  box-shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+button,
+.actions a {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  background: #172033;
+  color: white;
+}
+
+.notice {
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-heading span {
+  color: #667085;
+}
+
+.empty {
+  padding: 35px 0;
+  text-align: center;
+  color: #667085;
+}
+
+.queue {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.queue-item {
+  border: 1px solid #eaecf0;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.item-info {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.item-info small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #667085;
+}
+
+.item-info span {
+  color: #475467;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.actions button {
+  background: #eaecf0;
+  color: #344054;
+}
+
+@media (max-width: 650px) {
+  .input-row,
+  .queue-item {
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+  }
+}
