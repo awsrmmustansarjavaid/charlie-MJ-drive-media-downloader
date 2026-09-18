@@ -12,7 +12,7 @@ access — turning a ~30-step manual process into a couple of clicks.
 
 Click the image below to watch the demo video on LinkedIn.
 
-[![Demo Video](./doc/img/859c5fd9-ba92-4114-8411-0327027eb6f4.png)](https://lnkd.in/p/d3VkpbSx)
+![Demo Video](https://lnkd.in/p/d3VkpbSx)
 
 
 
