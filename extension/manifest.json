@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "charlie MJ - drive-media-downloader",
-  "version": "1.1.0",
-  "description": "Collects media requests visible to the browser in the current authorized session, with file size and one-click open in a new tab.",
+  "version": "1.2.0",
+  "description": "Detects Google Drive video/audio playback URLs, strips the byte-range so each link points at the full file, and shows real file sizes read from the URL itself.",
   "permissions": [
     "webRequest",
     "storage",

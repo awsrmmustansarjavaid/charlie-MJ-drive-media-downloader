@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>charlie MJ — media viewer</title>
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <header class="brandbar">
+        <img src="../icons/icon48.png" alt="" class="logo" />
+        <div>
+          <h1>charlie MJ</h1>
+          <p class="brand">media viewer</p>
+        </div>
+      </header>
+
+      <p id="meta">Loading…</p>
+
+      <div id="player-slot"></div>
+
+      <p id="hint" class="hint">
+        Once it loads, use the player's own <strong>⋮</strong> menu (or
+        right-click on it → <strong>Save as</strong>) to download the file.
+      </p>
+
+      <p id="fallback" class="hint" style="display: none">
+        Couldn't play this stream directly — it may have expired or need the
+        original Drive tab's session.
+        <a id="raw-link" target="_blank" rel="noopener">Try opening the raw link instead</a>.
+      </p>
+    </div>
+
+    <script src="viewer.js"></script>
+  </body>
+</html>

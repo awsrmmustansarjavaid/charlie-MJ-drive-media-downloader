@@ -132,6 +132,11 @@ h1 {
   font-weight: 500;
 }
 
+.duration {
+  font-size: 11px;
+  color: var(--muted);
+}
+
 .badge-best {
   font-size: 9px;
   font-weight: 700;

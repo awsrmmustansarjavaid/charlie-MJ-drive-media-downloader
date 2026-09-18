@@ -14,18 +14,27 @@ function formatSize(bytes) {
   return `${value.toFixed(decimals)} ${units[unitIndex]}`;
 }
 
+function formatDuration(seconds) {
+  if (!seconds || Number.isNaN(seconds)) return null;
+  const total = Math.round(seconds);
+  const h = Math.floor(total / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  const pad = (n) => String(n).padStart(2, "0");
+  return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${m}:${pad(s)}`;
+}
+
 function render(items) {
   list.innerHTML = "";
 
   if (!items.length) {
     const empty = document.createElement("div");
     empty.className = "empty";
-    empty.textContent = "No obvious media requests detected yet.";
+    empty.textContent = "No obvious media requests detected yet. Play the video in its Drive tab, then reopen this popup.";
     list.appendChild(empty);
     return;
   }
 
-  // Items already arrive sorted largest-first from the background script.
   const largestSize = items.reduce((max, item) => Math.max(max, item.size || 0), 0);
 
   for (const item of items) {
@@ -43,7 +52,7 @@ function render(items) {
 
     const chip = document.createElement("span");
     chip.className = `type-chip ${item.type}`;
-    chip.textContent = item.type;
+    chip.textContent = item.itagLabel || item.type;
     top.appendChild(chip);
 
     const sizeText = formatSize(item.size);
@@ -51,6 +60,14 @@ function render(items) {
     sizeEl.className = sizeText ? "size" : "size unknown";
     sizeEl.textContent = sizeText || "size unknown";
     top.appendChild(sizeEl);
+
+    const durationText = formatDuration(item.duration);
+    if (durationText) {
+      const durEl = document.createElement("span");
+      durEl.className = "duration";
+      durEl.textContent = durationText;
+      top.appendChild(durEl);
+    }
 
     if (item.size && item.size === largestSize) {
       const best = document.createElement("span");
@@ -63,19 +80,19 @@ function render(items) {
 
     const urlEl = document.createElement("span");
     urlEl.className = "url";
-    urlEl.textContent = item.url;
+    urlEl.textContent = item.cleanUrl;
     main.appendChild(urlEl);
 
     const openBtn = document.createElement("button");
     openBtn.className = "open-btn";
     openBtn.textContent = "Open";
-    openBtn.title = "Open in a new tab — use the player's ⋮ menu to download";
+    openBtn.title = "Open the full file in a new tab, then use ⋮ → Download";
     openBtn.addEventListener("click", () => {
-      // Open in a new tab rather than letting the browser guess how to
-      // handle the URL. This lets the built-in player load the media so
-      // the user can download it themselves via its own menu, instead of
-      // the browser saving an unnamed/raw file straight to disk.
-      chrome.tabs.create({ url: item.url, active: true });
+      // cleanUrl already has the chunk-only params (range/rn/rbuf/ump/
+      // srfvp) stripped, so this requests the whole file rather than one
+      // byte range — the same fix you do manually before pasting the URL
+      // into a new tab.
+      chrome.tabs.create({ url: item.cleanUrl, active: true });
     });
 
     row.append(main, openBtn);
