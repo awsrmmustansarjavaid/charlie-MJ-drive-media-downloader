@@ -200,15 +200,22 @@ charlie-MJ-drive-media-downloader/
 
 ## Installation
 
-Requirements: Google Chrome (or any Chromium-based browser that supports
-Manifest V3 extensions).
+### Requirements
 
-1. Download or clone this repository.
-2. Open `chrome://extensions`.
-3. Enable **Developer mode** (top-right toggle).
-4. Click **Load unpacked**.
-5. Select the `extension/` folder (not the repo root).
-6. Optionally pin the extension to your toolbar.
+Google Chrome or any Chromium-based browser that supports Manifest V3 extensions.
+
+### Steps
+
+1. **Download or clone** this repository.
+2. **Extract the repository** to a location on your computer, such as `C:\`.
+3. Open Google Chrome and go to `chrome://extensions`.
+4. Enable **Developer mode** using the toggle in the top-right corner.
+5. Click **Load unpacked**.
+6. Select the **`extension/`** folder inside the downloaded repository.
+
+   > **Important:** Select the `extension/` folder, **not the repository root folder**.
+7. Once loaded, optionally **pin the extension** to the Chrome toolbar for easy access.
+
 
 ## Usage
 
