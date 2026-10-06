@@ -14,7 +14,13 @@ Click the image below to watch the demo video on LinkedIn.
 
 [![Demo Video](./doc/img/859c5fd9-ba92-4114-8411-0327027eb6f4.png)](https://lnkd.in/p/d3VkpbSx)
 
+## Download
 
+<p align="center">
+  <a href="/downloads/charlie-MJ-drive-media-downloader-updated.zip">
+    <img src="https://img.shields.io/badge/%E2%AC%87%20Download%20Chrome%20Extension-2ea44f?style=for-the-badge" alt="Download Chrome Extension">
+  </a>
+</p>
 
 ---
 
